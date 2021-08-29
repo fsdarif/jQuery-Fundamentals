@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="show">Show</button>
+        <button id="hide">Hide</button>
+        <button id="showhide">Hide</button>
+        <h1>Text will hide by clicking</h1>
+
+        <button>Click Me</button>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, minus reprehenderit. Eligendi, vel vero velit dicta possimus itaque maiores, delectus ab ipsam accusantium, distinctio quibusdam fuga vitae quo nostrum fugiat.</p>
+
+        <div class="box">
+            <button>Stop</button>
+            <h1>Click me</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, distinctio minus. Cupiditate id ipsam omnis officiis quisquam perferendis consequuntur. Rem, harum hic eligendi ea illo ipsa voluptatibus fugit id alias.</p>
+        </div>
+    </div>
+
+
+    <script src="jquery.js"> </script>
+    <script>
+        $(document).ready(function(){
+            $('#hide').click(function(){
+                $('h1').hide(300)
+            });
+            $('#show').click(function(){
+                $('h1').show(300)
+            });
+            $('#show').click(function(){
+                $('h1').fadeIn(300)
+            });
+            $('#hide').click(function(){
+                $('h1').fadeOut(300)
+            });
+            $('#showhide').click(function(){
+                $('h1').toggle(300)
+            });
+                $('#showhide').click(function(){
+                    $('h1').fadeToggle(300)
+                });
+            })
+
+            $(document).ready(function(){
+                $('button').click(function(){
+                    var animation = $('p');
+                    animation.animate({height: '100px', width: '100px'}, 3000);
+                    animation.animate({height: '150px', width: '150px'}, 3000);
+                    animation.animate({height: '200px', width: '200px'}, 3000);
+                    animation.animate({height: '300px', width: '300px'}, 3000);
+                });
+            });
+
+            $(document).ready(function(){
+                $('h1').click(function(){
+                    $('p').slideToggle(10000)
+                    .css('background', 'green')
+                });
+
+                $('button').click(function(){
+                    $('p').stop()
+                });
+            });
+    </script>
+</body>
+</html>
